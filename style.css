@@ -1,0 +1,52 @@
+.streamerSet {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    margin: 5px;
+}
+.twitchPlayer {
+    width: 100%;
+}
+body {
+    margin: 0;
+    background-color: #201C2B;
+    color: white;
+}
+#topBar {
+    margin: 0;
+    background-color: #4B367C;
+    color: white;
+    text-align: center;
+}
+#topBar * {
+    margin: 0;
+}
+h3 {
+    background-color: #392860;
+    color: rgb(180, 180, 180);
+}
+#footer {
+    background-color: #0d0b11;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+#footer * {
+    display: inline;
+}
+.wordCatumbra {
+    color: rgb(158, 125, 211);
+}
+#warningTooWideWindow {
+    font-size: 60px;
+    text-align: center;
+    margin: 15px;
+    background-color: rgb(63, 56, 73);
+    display: none;
+}
+@media(min-width: 1181px) {
+    .streamerSet {
+        display: none;
+    }
+    #warningTooWideWindow {
+        display: block;
+    }
+}
