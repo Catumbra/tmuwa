@@ -4,6 +4,7 @@
     padding: 5px;
 }
 .twitchPlayer {
+    /* prefered ratio: 800px 450px */
     width: 100%;
 }
 body {
@@ -35,12 +36,20 @@ h3 {
 .wordCatumbra {
     color: rgb(158, 125, 211);
 }
-@media(min-width: 1181px) {
+@media(min-width: 1180px) {
     .twitchPlayer {
         width: 800px;
     }
     .streamerSet {
         width: 1150px;
         margin: auto;
+    }
+}
+@media(max-width: 810px) {
+    .streamerSet {
+        display: block;
+    }
+    .twitchChat {
+        display: none;
     }
 }
