@@ -1,7 +1,7 @@
 .streamerSet {
     display: grid;
     grid-template-columns: 1fr 350px;
-    margin: 5px;
+    padding: 5px;
 }
 .twitchPlayer {
     width: 100%;
@@ -35,18 +35,12 @@ h3 {
 .wordCatumbra {
     color: rgb(158, 125, 211);
 }
-#warningTooWideWindow {
-    font-size: 60px;
-    text-align: center;
-    margin: 15px;
-    background-color: rgb(63, 56, 73);
-    display: none;
-}
 @media(min-width: 1181px) {
-    .streamerSet {
-        display: none;
+    .twitchPlayer {
+        width: 800px;
     }
-    #warningTooWideWindow {
-        display: block;
+    .streamerSet {
+        width: 1150px;
+        margin: auto;
     }
 }
