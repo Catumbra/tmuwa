@@ -21,18 +21,26 @@ body {
 .streamerUnit {
     padding: 5px;
 }
-.streamerInput {
+.unitTopBar {
     background: #4A377D;
+    display: grid;
+    grid-template-columns: 150px 24px;
 }
-.streamerInput input {
-    background-color: rgb(124, 103, 184);
-    color: white;
+.unitTopBar input {
+    background-color: rgb(105, 87, 153);
+    color: #FEFEFE;
     border: 0;
+    margin: 3px 1px 0 3px;
 }
-.streamerInput .textInput {
+.unitTopBar .textInput {
     padding: 1px;
     font-size: 18px;
     text-align: center;
+}
+.unitTopBar .buttonInput {
+    width: 18px;
+    height: 18px;
+    padding: 3px;
 }
 .streamerSet {
     display: grid;
@@ -44,6 +52,7 @@ body {
 }
 
 #footer {
+    margin-top: 5px;
     background-color: #0d0b11;
     text-align: center;
     padding: 5px 0 5px 0;
