@@ -1,19 +1,11 @@
-.streamerSet {
-    display: grid;
-    grid-template-columns: 1fr 350px;
-    padding: 5px;
-}
-.twitchPlayer {
-    /* prefered ratio: 800px 450px */
-    width: 100%;
-}
 body {
     margin: 0;
     background-color: #201C2B;
     color: white;
 }
+
 #topBar {
-    margin: 0;
+    margin: 0 0 5px 0;
     background-color: #4B367C;
     color: white;
     text-align: center;
@@ -21,10 +13,36 @@ body {
 #topBar * {
     margin: 0;
 }
-h3 {
+#topBar h3 {
     background-color: #392860;
     color: rgb(180, 180, 180);
 }
+
+.streamerUnit {
+    padding: 5px;
+}
+.streamerInput {
+    background: #4A377D;
+}
+.streamerInput input {
+    background-color: rgb(124, 103, 184);
+    color: white;
+    border: 0;
+}
+.streamerInput .textInput {
+    padding: 1px;
+    font-size: 18px;
+    text-align: center;
+}
+.streamerSet {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+}
+.twitchPlayer {
+    /* prefered ratio: 800px 450px */
+    width: 100%;
+}
+
 #footer {
     background-color: #0d0b11;
     text-align: center;
@@ -33,19 +51,23 @@ h3 {
 #footer * {
     display: inline;
 }
+
 .wordCatumbra {
     color: rgb(158, 125, 211);
     text-decoration-line: none;
 }
+
+/* Wide Screen */
 @media(min-width: 1180px) {
     .twitchPlayer {
         width: 800px;
     }
-    .streamerSet {
+    .streamerUnit {
         width: 1150px;
         margin: auto;
     }
 }
+/* Narro screen: disable chat */
 @media(max-width: 810px) {
     .streamerSet {
         display: block;
