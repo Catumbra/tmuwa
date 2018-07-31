@@ -18,3 +18,10 @@ function modifyStreamerSet(self)
     targetStreamerSet.querySelector(".twitchPlayer").src = getPlayerUrl(streamerID);
     targetStreamerSet.querySelector(".twitchChat").src = getChatUrl(streamerID);
 }
+function removeStreamerUnit(self) {
+    targetNode = self.parentNode.parentNode;
+    if(targetNode.className === "streamerUnit")
+        targetNode.remove();
+    else
+        alert(targetNode + "is not streamerUnit");
+}

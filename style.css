@@ -24,23 +24,29 @@ body {
 .unitTopBar {
     background: #4A377D;
     display: grid;
-    grid-template-columns: 150px 24px;
+    grid-template-columns: 150px 24px 24px;
 }
 .unitTopBar input {
     background-color: rgb(105, 87, 153);
     color: #FEFEFE;
     border: 0;
-    margin: 3px 1px 0 3px;
+    margin: 3px 3px 0 3px;
 }
 .unitTopBar .textInput {
     padding: 1px;
     font-size: 18px;
     text-align: center;
+    margin-right: 1px;
 }
 .unitTopBar .buttonInput {
     width: 18px;
     height: 18px;
     padding: 3px;
+}
+.unitTopBar .buttonClose {
+    width: 16px;
+    height: 16px;
+    padding: 4px;
 }
 .streamerSet {
     display: grid;
