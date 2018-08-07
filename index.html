@@ -2,6 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>TMuWA 트무와</title>
     <link rel="stylesheet" href="style.css">
     <script src="streamerUnit.js"></script>
@@ -9,13 +11,15 @@
 <body>
     <div id="topBar">
         <h1>Twitch Multi Web App</h1>
-        <h3>ver. ALPHA - ###### Wed Aug 1 06:54:53 KST 2018</h3>        
+        <h3>ver. ALPHA - ###### Wed Aug 8 03:52:57 KST 2018</h3>        
     </div>
     <div id="mainContents">
 
+        <input type="button" value="+" onclick="addUnit()">
+
         <div class="streamerUnit">
             <div class="unitTopBar">
-                <input class="textInput" type="text" value="Streamer ID">
+                <input class="textInput" type="text" value="collet11">
                 <input class="buttonInput" type="image" src="images/refresh-24.ico" onclick="modifyStreamerSet(this);">
                 <input class="buttonClose" type="image" src="images/x-mark-24.ico" onclick="removeStreamerUnit(this)">
             </div>
@@ -27,7 +31,7 @@
 
         <div class="streamerUnit">
             <div class="unitTopBar">
-                <input class="textInput" type="text" value="Streamer ID">
+                <input class="textInput" type="text" value="kumikomii">
                 <input class="buttonInput" type="image" src="images/refresh-24.ico" onclick="modifyStreamerSet(this);">
                 <input class="buttonClose" type="image" src="images/x-mark-24.ico" onclick="removeStreamerUnit(this)">
             </div>
@@ -36,19 +40,6 @@
                 <iframe class="twitchChat" src="https://www.twitch.tv/embed/kumikomii/chat" frameborder="0" scrolling="no" width="350" height="450"></iframe>
             </div>
         </div>
-
-        <div class="streamerUnit">
-            <div class="unitTopBar">
-                <input class="textInput" type="text" value="Streamer ID">
-                <input class="buttonInput" type="image" src="images/refresh-24.ico" onclick="modifyStreamerSet(this);">
-                <input class="buttonClose" type="image" src="images/x-mark-24.ico" onclick="removeStreamerUnit(this)">
-            </div>
-            <div class="streamerSet">
-                <iframe class="twitchPlayer" frameborder="0" allowfullscreen="true" scrolling="no" width="100%" height="450"></iframe>
-                <iframe class="twitchChat" frameborder="0" scrolling="no" width="350" height="450"></iframe>
-            </div>
-        </div>
-
     </div>
     <div id="footer">
         Made by <a href="https://github.com/catumbra" target="_blank" class="wordCatumbra">CATUMBRA</a>
