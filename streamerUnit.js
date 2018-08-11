@@ -32,7 +32,7 @@ function addUnit()
     fetch("streamerUnit_default.html")
     .then(function(response){
         response.text().then(function(text){
-            document.querySelector("#mainContents").innerHTML += text;
+            $("#mainContents").append(text);
         })
     })
 }
