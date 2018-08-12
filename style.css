@@ -22,12 +22,12 @@ body {
     padding: 5px;
 }
 .unitTopBar {
-    background: #4A377D;
+    background: #4a377d;
     display: grid;
     grid-template-columns: 150px 24px 24px;
 }
 .unitTopBar input {
-    background-color: rgb(105, 87, 153);
+    background-color: #695799;
     color: #FEFEFE;
     border: 0;
     margin: 3px 3px 0 3px;
@@ -57,6 +57,20 @@ body {
     width: 100%;
 }
 
+#buttonAddHolder {
+    background-color: #4a377d;
+    padding: 5px 0 5px 0;
+    height: 24px;
+    margin: 5px;
+    text-align: center;
+}
+#buttonAddHolder input {
+    background-color: #4a377d;
+    width: 18px;
+    height: 18px;
+    padding: 3px;
+}
+
 #footer {
     margin-top: 5px;
     background-color: #0d0b11;
@@ -68,7 +82,7 @@ body {
 }
 
 .wordCatumbra {
-    color: rgb(158, 125, 211);
+    color: #9e7dd3;
     text-decoration-line: none;
 }
 
@@ -77,7 +91,7 @@ body {
     .twitchPlayer {
         width: 800px;
     }
-    .streamerUnit {
+    .streamerUnit, #buttonAddHolder {
         width: 1150px;
         margin: auto;
     }

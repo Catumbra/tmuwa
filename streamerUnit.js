@@ -26,13 +26,12 @@ function removeStreamerUnit(self)
     else
         alert(targetNode + "is not streamerUnit");
 }
-
 function addUnit()
 {
     fetch("streamerUnit_default.html")
     .then(function(response){
         response.text().then(function(text){
-            $("#mainContents").append(text);
+            $("#streamerUnitsHolder").append(text);
         })
     })
 }
