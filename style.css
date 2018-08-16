@@ -63,6 +63,7 @@ body {
     height: 24px;
     margin: 5px;
     text-align: center;
+    cursor: pointer;
 }
 #buttonAddHolder input {
     background-color: #4a377d;
@@ -96,7 +97,7 @@ body {
         margin: auto;
     }
 }
-/* Narro screen: disable chat */
+/* Narrow screen: disable chat */
 @media(max-width: 810px) {
     .streamerSet {
         display: block;
