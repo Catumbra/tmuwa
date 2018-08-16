@@ -2,20 +2,19 @@ body {
     margin: 0;
     background-color: #201C2B;
     color: white;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 #topBar {
-    margin: 0 0 5px 0;
-    background-color: #4B367C;
-    color: white;
     text-align: center;
+    color: white;
+    margin: 0 0 5px 0;
+    border-bottom: #392860 solid 5px;
+    padding: 5px;
+    background-color: #4B367C;
 }
 #topBar * {
     margin: 0;
-}
-#topBar h3 {
-    background-color: #392860;
-    color: rgb(180, 180, 180);
 }
 
 .streamerUnit {
@@ -53,7 +52,6 @@ body {
     grid-template-columns: 1fr 350px;
 }
 .twitchPlayer {
-    /* prefered ratio: 800px 450px */
     width: 100%;
 }
 
@@ -76,15 +74,22 @@ body {
     margin-top: 10px;
     background-color: #0d0b11;
     text-align: center;
-    padding: 5px 0 5px 0;
+    padding: 8px 0 8px 0;
 }
-#footer * {
-    display: inline;
+#footer p {
+    margin: 5px 0 5px 0;
+    color: #d1d1d1;
+    /* display: inline; */
 }
 
 .wordCatumbra {
     color: #9e7dd3;
     text-decoration-line: none;
+}
+.wordBeta {
+    color: #d1d1d1;
+    font-size: 18px;
+    vertical-align: text-top;
 }
 
 /* Wide Screen */
