@@ -22,20 +22,22 @@ header * {
 }
 .unitTopBar {
     background: #4a377d;
+    padding: 3px 3px 0 3px;
     display: grid;
-    grid-template-columns: 150px 24px 24px;
+    grid-template-columns: 150px 24px 1fr 24px;
+    grid-column-gap: 4px;
 }
 .unitTopBar input {
     background-color: #695799;
     color: #FEFEFE;
     border: 0;
-    margin: 3px 3px 0 3px;
+    /* margin: 3px 3px 0 3px; */
 }
 .unitTopBar .textInput {
     padding: 1px;
     font-size: 18px;
     text-align: center;
-    margin-right: 1px;
+    /* margin-right: 1px; */
 }
 .unitTopBar .buttonInput {
     width: 18px;
