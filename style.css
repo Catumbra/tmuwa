@@ -5,7 +5,7 @@ body {
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-#topBar {
+header {
     text-align: center;
     color: white;
     margin: 0 0 5px 0;
@@ -13,7 +13,7 @@ body {
     padding: 5px;
     background-color: #4B367C;
 }
-#topBar * {
+header * {
     margin: 0;
 }
 
@@ -70,13 +70,13 @@ body {
     padding: 3px;
 }
 
-#footer {
+footer {
     margin-top: 10px;
     background-color: #0d0b11;
     text-align: center;
     padding: 8px 0 8px 0;
 }
-#footer p {
+footer p {
     margin: 5px 0 5px 0;
     color: #d1d1d1;
     /* display: inline; */
@@ -84,7 +84,7 @@ body {
 
 .wordCatumbra {
     color: #9e7dd3;
-    text-decoration-line: none;
+    text-decoration: none;
 }
 .wordBeta {
     color: #d1d1d1;
