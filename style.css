@@ -5,6 +5,7 @@ body {
     font-family: 'Nanum Gothic', sans-serif;
 }
 
+/* header */
 header {
     text-align: center;
     color: white;
@@ -17,6 +18,7 @@ header * {
     margin: 0;
 }
 
+/* Main contents */
 .streamerUnit {
     padding: 5px;
 }
@@ -31,13 +33,11 @@ header * {
     background-color: #695799;
     color: #FEFEFE;
     border: 0;
-    /* margin: 3px 3px 0 3px; */
 }
 .unitTopBar .textInput {
     padding: 1px;
     font-size: 18px;
     text-align: center;
-    /* margin-right: 1px; */
 }
 .unitTopBar .buttonInput {
     width: 18px;
@@ -53,8 +53,14 @@ header * {
     display: grid;
     grid-template-columns: 1fr 350px;
 }
-.twitchPlayer {
+.streamerSet .twitchPlayer {
+    /* prefered ratio: 800px 450px */
     width: 100%;
+    height: 450px;
+}
+.streamerSet .twitchChat {
+    width: 350px;
+    height: 450px;
 }
 
 #buttonAddHolder {
@@ -72,6 +78,7 @@ header * {
     padding: 3px;
 }
 
+/* Footer */
 footer {
     margin-top: 10px;
     background-color: #0d0b11;
@@ -81,9 +88,9 @@ footer {
 footer p {
     margin: 5px 0 5px 0;
     color: #d1d1d1;
-    /* display: inline; */
 }
 
+/* General styles */
 .wordCatumbra {
     color: #9e7dd3;
     text-decoration: none;
