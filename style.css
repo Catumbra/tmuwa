@@ -14,65 +14,71 @@ header {
     padding: 5px;
     background-color: #4B367C;
 }
-header * {
+header>* {
     margin: 0;
 }
 
 /* Main contents */
 .streamerUnit {
-    padding: 5px;
+    margin-bottom: 5px;
 }
+
 .unitTopBar {
     background: #4a377d;
     padding: 3px 3px 0 3px;
     display: grid;
-    grid-template-columns: 150px 24px 1fr 24px;
+    grid-template-columns: 150px repeat(2, 24px) 1fr 24px;
     grid-column-gap: 4px;
 }
-.unitTopBar input {
+.unitTopBar>input {
     background-color: #695799;
     color: #FEFEFE;
     border: 0;
 }
-.unitTopBar .textInput {
+.unitTopBar>.textInput {
     padding: 1px;
     font-size: 18px;
     text-align: center;
 }
-.unitTopBar .buttonInput {
+.unitTopBar>.buttonInput {
     width: 18px;
     height: 18px;
     padding: 3px;
 }
-.unitTopBar .buttonClose {
+.unitTopBar>.buttonChat {
+    width: 19px;
+    height: 19px;
+    padding: 2.5px;
+}
+.unitTopBar>.buttonClose {
     width: 16px;
     height: 16px;
     padding: 4px;
 }
+
 .streamerSet {
     display: grid;
     grid-template-columns: 1fr 350px;
 }
-.streamerSet .twitchPlayer {
+.streamerSet>.twitchPlayer {
     /* prefered ratio: 800px 450px */
     width: 100%;
     height: 450px;
 }
-.streamerSet .twitchChat {
+.streamerSet>.twitchChat {
     width: 350px;
     height: 450px;
 }
 
-#buttonAddHolder {
+#buttonAddHolder>button {
     background-color: #4a377d;
     padding: 5px 0 5px 0;
-    height: 24px;
-    margin: 5px;
-    text-align: center;
+    border: none;
+    width: 100%;
+    height: 34px;
     cursor: pointer;
 }
-#buttonAddHolder input {
-    background-color: #4a377d;
+#buttonAddHolder>button>img {
     width: 18px;
     height: 18px;
     padding: 3px;
@@ -80,12 +86,12 @@ header * {
 
 /* Footer */
 footer {
-    margin-top: 10px;
+    margin-top: 5px;
     background-color: #0d0b11;
     text-align: center;
     padding: 8px 0 8px 0;
 }
-footer p {
+footer>p {
     margin: 5px 0 5px 0;
     color: #d1d1d1;
 }
@@ -98,25 +104,22 @@ footer p {
 .wordBeta {
     color: #d1d1d1;
     font-size: 18px;
-    vertical-align: text-top;
+    vertical-align: super;
 }
 
-/* Wide Screen */
-@media(min-width: 1180px) {
-    .twitchPlayer {
-        width: 800px;
-    }
-    .streamerUnit, #buttonAddHolder {
+/* Wide Screen: middle align */
+@media(min-width: 1150px) {
+    #mainContents>* {
         width: 1150px;
         margin: auto;
     }
 }
-/* Narrow screen: disable chat */
-@media(max-width: 810px) {
+/* Narrow Screen: move chat bottom */
+/* @media(max-width: 800px) {
     .streamerSet {
-        display: block;
+        grid-template-columns: 1fr;
     }
-    .twitchChat {
-        display: none;
+    .streamerSet>.twitchChat {
+        width: 100%;
     }
-}
+} */

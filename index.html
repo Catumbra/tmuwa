@@ -20,6 +20,7 @@
                 <div class="unitTopBar">
                     <input class="textInput" type="text" value="Streamer ID" onclick="this.select();" onkeyup="functionIfEnter(this, event);">
                     <input class="buttonInput" type="image" src="images/refresh-24.ico" onclick="modifyStreamerSet(this);">
+                    <input class="buttonChat" type="image" src="images/chat-24.ico" onclick="toggleChat(this);">
                     <div class="blankSpace"></div>
                     <input class="buttonClose" type="image" src="images/x-mark-24.ico" onclick="removeStreamerUnit(this);">
                 </div>
@@ -29,8 +30,10 @@
                 </div>
             </div>
         </div>
-        <div id="buttonAddHolder" onclick="addUnit();">
-            <input class="buttonAdd" type="image" src="images/plus-24.ico">
+        <div id="buttonAddHolder">
+            <button onclick="addUnit();">
+                <img src="images/plus-24.ico">
+            </button>
         </div>
     </section>
     <footer>
