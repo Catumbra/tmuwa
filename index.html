@@ -15,21 +15,7 @@
         <h1>Twitch Multi Web App <span class="wordBeta">β</span></h1>
     </header>
     <section id="mainContents">
-        <div id="streamerUnitsHolder">
-            <div class="streamerUnit">
-                <div class="unitTopBar">
-                    <input class="textInput" type="text" value="Streamer ID" onclick="this.select();" onkeyup="functionIfEnter(this, event);">
-                    <input class="buttonInput" type="image" src="images/refresh-24.ico" onclick="modifyStreamerSet(this);">
-                    <input class="buttonChat" type="image" src="images/chat-24.ico" onclick="toggleChat(this);">
-                    <div class="blankSpace"></div>
-                    <input class="buttonClose" type="image" src="images/x-mark-24.ico" onclick="removeStreamerUnit(this);">
-                </div>
-                <div class="streamerSet">
-                    <iframe class="twitchPlayer" src="https://player.twitch.tv/?channel=" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-                    <iframe class="twitchChat" src="https://www.twitch.tv/embed//chat" frameborder="0" scrolling="no"></iframe>
-                </div>
-            </div>
-        </div>
+        <div id="streamerUnitsHolder"></div>
         <div id="buttonAddHolder">
             <button onclick="addUnit();">
                 <img src="images/plus-24.ico">
