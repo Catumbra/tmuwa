@@ -1,10 +1,10 @@
 <div class="streamerUnit">
     <div class="unitTopBar">
-        <input class="textInput" type="text" value="Streamer ID" onclick="this.select();" onkeyup="functionIfEnter(this, event);">
-        <input class="buttonInput" type="image" src="images/refresh-24.ico" onclick="modifyStreamerSet(this);">
-        <input class="buttonChat" type="image" src="images/chat-24.ico" onclick="toggleChat(this);">
+        <input class="textInput" type="text" value="Streamer ID" onclick="this.select();" onkeyup="streamerUnitController.functionIfEnter(this, event);">
+        <input class="buttonInput" type="image" src="images/refresh-24.ico" onclick="streamerUnitController.modifyStreamerSet(this);">
+        <input class="buttonChat" type="image" src="images/chat-24.ico" onclick="streamerUnitController.toggleChat(this);">
         <div class="blankSpace"></div>
-        <input class="buttonClose" type="image" src="images/x-mark-24.ico" onclick="removeStreamerUnit(this);">
+        <input class="buttonClose" type="image" src="images/x-mark-24.ico" onclick="streamerUnitController.removeStreamerUnit(this);">
     </div>
     <div class="streamerSet">
         <iframe class="twitchPlayer" src="https://player.twitch.tv/?channel=" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
