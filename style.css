@@ -60,14 +60,29 @@ header>* {
     display: grid;
     grid-template-columns: 1fr 350px;
 }
-.streamerSet>.twitchPlayer {
-    /* prefered ratio: 800px 450px */
+/* Auto resize .twitchPlayer to 16:9 ratio */
+.streamerSet>.outerWrap_resizable {
     width: 100%;
-    height: 450px;
 }
+.streamerSet>.outerWrap_resizable>.innerWrap {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.26%;
+}
+.streamerSet>.outerWrap_resizable>.innerWrap>.twitchPlayer {
+    /* prefered ratio: 800px 450px */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Auto adjust height(same as auto resized twitch player height) */
 .streamerSet>.twitchChat {
     width: 350px;
-    height: 450px;
+    height: 100%;
 }
 
 #buttonAddHolder>button {

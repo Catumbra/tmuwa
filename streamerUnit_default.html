@@ -7,7 +7,11 @@
         <input class="buttonClose" type="image" src="images/x-mark-24.ico" onclick="streamerUnitController.removeStreamerUnit(this);">
     </div>
     <div class="streamerSet">
-        <iframe class="twitchPlayer" src="https://player.twitch.tv/?channel=" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+        <div class="outerWrap_resizable">
+            <div class="innerWrap">
+                <iframe class="twitchPlayer" src="https://player.twitch.tv/?channel=" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+            </div>
+        </div>
         <iframe class="twitchChat" src="https://www.twitch.tv/embed//chat" frameborder="0" scrolling="no"></iframe>
     </div>
 </div>
