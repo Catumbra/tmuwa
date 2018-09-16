@@ -35,12 +35,12 @@ header>* {
     color: #FEFEFE;
     border: 0;
 }
-.unitTopBar>.textInput {
+.unitTopBar>.steamerIDBox {
     padding: 1px;
     font-size: 18px;
     text-align: center;
 }
-.unitTopBar>.buttonInput {
+.unitTopBar>.buttonLoadUnit {
     width: 18px;
     height: 18px;
     padding: 3px;

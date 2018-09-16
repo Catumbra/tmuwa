@@ -4,6 +4,10 @@ $(document).ready(function() {
 })
 
 var streamerUnitController = {
+    getStreamerID: function(self) {
+        var streamerID = this.getParentStreamerUnit(self).querySelector(".steamerIDBox").value;
+        return streamerID;
+    },
     getPlayerUrl: function(streamerID) {
         var url = "https://player.twitch.tv/?channel=" + streamerID;
         return url;
@@ -23,11 +27,9 @@ var streamerUnitController = {
                 return 0;
         }
     },
-    modifyStreamerSet: function(self) {
-        var thisStreamerUnit = self.parentNode.parentNode;
-        var targetStreamerSet = thisStreamerUnit.querySelector(".streamerSet");
-
-        var streamerID = thisStreamerUnit.querySelector(".unitTopBar").querySelector(".textInput").value;
+    loadStreamerSet: function(self) {
+        var targetStreamerSet = this.getParentStreamerUnit(self).querySelector(".streamerSet");
+        var streamerID = this.getStreamerID(self);
 
         targetStreamerSet.querySelector(".twitchPlayer").src = this.getPlayerUrl(streamerID);
         targetStreamerSet.querySelector(".twitchChat").src = this.getChatUrl(streamerID);
@@ -48,18 +50,18 @@ var streamerUnitController = {
         }
     },
     removeStreamerUnit: function(self) {
-        targetNode = self.parentNode.parentNode;
+        targetNode = this.getParentStreamerUnit(self);
         if(targetNode.className === "streamerUnit")
             targetNode.remove();
         else
             alert(targetNode + "is not streamerUnit");
     },
-    // Triggers buttonInput when press ENTER on textInput
+    // Triggers buttonLoadUnit when press ENTER on steamerIDBox
     functionIfEnter: function(self, e) {
         if(e.keyCode === 13)
-            self.parentNode.querySelector(".buttonInput").click();
+            this.getParentStreamerUnit(self).querySelector(".buttonLoadUnit").click();
     }
-};
+}
 
 function addUnit()
 {
