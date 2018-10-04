@@ -35,7 +35,7 @@ header>* {
     color: #FEFEFE;
     border: 0;
 }
-.unitTopBar>.steamerIDBox {
+.unitTopBar>.streamerIDBox {
     padding: 1px;
     font-size: 18px;
     text-align: center;
@@ -130,6 +130,7 @@ footer>p {
     }
 }
 /* Narrow Screen: move chat bottom */
+/* minimal .twitchPlayer size: width = 550px */
 /* @media(max-width: 800px) {
     .streamerSet {
         grid-template-columns: 1fr;
