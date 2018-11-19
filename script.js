@@ -13,7 +13,7 @@ var streamerUnitController = {
         return url;
     },
     getChatUrl: function(streamerID) {
-        var url = "https://www.twitch.tv/embed/" + streamerID + "/chat";
+        var url = "https://www.twitch.tv/embed/" + streamerID + "/chat?darkpopout";
         return url;
     },
     getParentStreamerUnit: function(self) {
