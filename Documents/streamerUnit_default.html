@@ -1,0 +1,17 @@
+<div class="streamerUnit">
+    <div class="unitTopBar">
+        <input class="streamerIDBox" type="text" value="Streamer ID" onclick="this.select();" onkeyup="streamerUnitController.functionIfEnter(this, event);">
+        <input class="buttonLoadUnit" type="image" src="Images/refresh-24.ico" onclick="streamerUnitController.loadStreamerSet(this);">
+        <input class="buttonChat" type="image" src="Images/chat-24.ico" onclick="streamerUnitController.toggleChat(this);">
+        <div class="blankSpace"></div>
+        <input class="buttonClose" type="image" src="Images/x-mark-24.ico" onclick="streamerUnitController.removeStreamerUnit(this);">
+    </div>
+    <div class="streamerSet">
+        <div class="outerWrap_resizable">
+            <div class="innerWrap">
+                <iframe class="twitchPlayer" src="https://player.twitch.tv/?channel=" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+            </div>
+        </div>
+        <iframe class="twitchChat" src="https://www.twitch.tv/embed//chat?darkpopout" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>

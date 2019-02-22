@@ -57,19 +57,9 @@ footer>p {
 }
 
 /* Wide Screen: middle align */
-@media(min-width: 1150px) {
+/* @media(min-width: 1150px) {
     #mainContents>* {
         width: 1150px;
         margin: auto;
-    }
-}
-/* Narrow Screen: move chat bottom */
-/* minimal .twitchPlayer size: width = 550px */
-/* @media(max-width: 800px) {
-    .streamerSet {
-        grid-template-columns: 1fr;
-    }
-    .streamerSet>.twitchChat {
-        width: 100%;
     }
 } */

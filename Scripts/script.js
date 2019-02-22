@@ -65,7 +65,7 @@ var streamerUnitController = {
 
 function addUnit()
 {
-    fetch("streamerUnit_default.html")
+    fetch("Documents/streamerUnit_default.html")
     .then(function(response){
         response.text().then(function(text){
             $("#streamerUnitsHolder").append(text);
