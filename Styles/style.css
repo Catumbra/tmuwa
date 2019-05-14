@@ -7,6 +7,8 @@ body {
 
 /* header */
 header {
+    display: grid;
+    grid-template-columns: 36px 1fr 36px;
     text-align: center;
     color: white;
     margin: 0 0 5px 0;
@@ -17,12 +19,10 @@ header {
 header>* {
     margin: 0;
 }
-header {
-    display: grid;
-    grid-template-columns: 35px 1fr 35px;
-}
 header>#SS_alignment_toggleButton {
-    width: 35px;
+    background-color: #695799;
+    color: #FEFEFE;
+    border: 0;
 }
 
 /* Main contents */
