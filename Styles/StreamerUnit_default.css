@@ -36,10 +36,6 @@
     padding: 4px;
 }
 
-.streamerSet {
-    display: grid;
-    grid-template-columns: 1fr 350px;
-}
 /* Auto resize .twitchPlayer to 16:9 ratio */
 .streamerSet>.outerWrap_resizable {
     width: 100%;

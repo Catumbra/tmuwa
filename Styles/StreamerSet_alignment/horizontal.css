@@ -1,0 +1,4 @@
+.streamerSet {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+}

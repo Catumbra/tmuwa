@@ -73,6 +73,15 @@ function addUnit()
     })
 }
 
+function toggleStreamerSet_alignment()
+{
+    var currentMode = $("#SS_alignment").attr("href").split('/')[2];
+    if (currentMode == 'horizontal.css')
+        $("#SS_alignment").attr("href", "Styles/StreamerSet_alignment/vertical.css");
+    else if (currentMode == 'vertical.css')
+        $("#SS_alignment").attr("href", "Styles/StreamerSet_alignment/horizontal.css");
+}
+
 // Getting version values and put them inside footer
 function getAndWriteVersion() 
 {

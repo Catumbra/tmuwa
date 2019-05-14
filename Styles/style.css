@@ -17,6 +17,13 @@ header {
 header>* {
     margin: 0;
 }
+header {
+    display: grid;
+    grid-template-columns: 35px 1fr 35px;
+}
+header>#SS_alignment_toggleButton {
+    width: 35px;
+}
 
 /* Main contents */
 #buttonAddHolder>button {
