@@ -9,11 +9,11 @@ var streamerUnitController = {
         return streamerID;
     },
     getPlayerUrl: function(streamerID) {
-        var url = "https://player.twitch.tv/?channel=" + streamerID;
+        var url = "https://player.twitch.tv/?channel=" + streamerID + "&parent=" + window.location.hostname;
         return url;
     },
     getChatUrl: function(streamerID) {
-        var url = "https://www.twitch.tv/embed/" + streamerID + "/chat?darkpopout";
+        var url = "https://www.twitch.tv/embed/" + streamerID + "/chat?parent=" +  + window.location.hostname;
         return url;
     },
     getParentStreamerUnit: function(self) {
