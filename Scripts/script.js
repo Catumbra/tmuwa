@@ -1,6 +1,5 @@
 $(document).ready(function() {
     addUnit();
-    getAndWriteVersion();
 })
 
 var streamerUnitController = {
@@ -80,17 +79,4 @@ function toggleStreamerSet_alignment()
         $("#SS_alignment").attr("href", "Styles/StreamerSet_alignment/vertical.css");
     else if (currentMode == 'vertical.css')
         $("#SS_alignment").attr("href", "Styles/StreamerSet_alignment/horizontal.css");
-}
-
-// Getting version values and put them inside footer
-function getAndWriteVersion() 
-{
-    fetch('version').then(function(response) {
-        response.text().then(function(text) {
-            var targetPTag = document.querySelector("#versionParagraph");
-            var items = text.split('\n');
-            targetPTag.innerHTML = items[0];
-            targetPTag.setAttribute("title", "Last Update: " + items[1].replace("###### ", ""));
-        })
-    });
 }
