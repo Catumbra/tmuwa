@@ -3,39 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-    <script src="Scripts/jquery-3.3.1.js"></script>
-
+    
     <title>TMuWA beta</title>
     <link rel="icon" href="fabicon.ico">
-
-    <!-- Styles -->
+    
+    <!-- 폰트 로딩 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <!-- 트위치 임베드 -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    
+    <!-- Styles & Scripts -->
     <link rel="stylesheet" href="Styles/style.css">
-    <link id="SU_style" rel="stylesheet" href="Styles/StreamerUnit_default.css">
-    <link id="SS_alignment" rel="stylesheet" href="Styles/StreamerSet_alignment/horizontal.css">
-
-    <!-- Scripts -->
-    <script src="Scripts/script.js"></script>
-    <script src="Scripts/StreamerUnit.js"></script>
-
+    <!-- <script src="Scripts/script.js"></script> -->
 </head>
 <body>
-    <header>
-        <div></div>
-        <h1>TMuWA <span class="wordBeta">β</span></h1>
-        <input id="SS_alignment_toggleButton" type="image" src="Images/toggleChat-36.png" onclick="toggleStreamerSet_alignment();">
-    </header>
-    <section id="mainContents">
-        <div id="streamerUnitsHolder"></div>
-        <div id="buttonAddHolder">
-            <button onclick="addUnit();">
-                <img src="Images/plus-24.ico">
-            </button>
-        </div>
+    <header></header>
+    <section>
+        <twitch-stream channel='jungtaejune'></twitch-stream>
+        <!-- <twitch-stream channel='collet11'></twitch-stream> -->
     </section>
     <footer>
-        <p>Made by <a class="wordCatumbra" href="https://github.com/catumbra" target="_blank">CATUMBRA</a></p>
+        <p>Tmuwa(Twitch Multi Web Application) β by <a href="https://github.com/catumbra" target="_blank">CATUMBRA</a></p>
     </footer>
 </body>
+<!-- Add Web Components -->
+<script src="components/twitchStream.js"></script>
 </html>
