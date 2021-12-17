@@ -1,8 +1,14 @@
+/* Noto Sans KR 폰트 추가 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
 * {
     margin: 0;
 }
 html {
     height: 100%;
+    color: #f7f7f8;
+    background-color: #0e0e10;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 body {
     display: flex;
@@ -12,11 +18,14 @@ body {
 body>section {
     flex: 1;
     overflow: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
-body>section>twitch-stream {
-    height: 100%;
+body>section>* {
+    /* height: 100%; */
+    background-color: #1f1e22;
 }
 body>footer {
-    background: #201c29;
     margin-top: auto;
 }

@@ -7,25 +7,25 @@
     <title>TMuWA beta</title>
     <link rel="icon" href="fabicon.ico">
     
-    <!-- 폰트 로딩 -->
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <!-- 트위치 임베드 -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
     
     <!-- Styles & Scripts -->
     <link rel="stylesheet" href="Styles/style.css">
-    <!-- <script src="Scripts/script.js"></script> -->
+    <link rel="stylesheet" href="Styles/twitch-stream.css">
+    <script src="Scripts/script.js"></script>
 </head>
 <body>
     <header></header>
     <section>
         <twitch-stream channel='jungtaejune'></twitch-stream>
-        <!-- <twitch-stream channel='collet11'></twitch-stream> -->
+        <twitch-stream channel='collet11'></twitch-stream>
     </section>
     <footer>
         <p>Tmuwa(Twitch Multi Web Application) β by <a href="https://github.com/catumbra" target="_blank">CATUMBRA</a></p>
     </footer>
 </body>
+
 <!-- Add Web Components -->
 <script src="components/twitchStream.js"></script>
 </html>
