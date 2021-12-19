@@ -18,9 +18,6 @@ body {
 body>section {
     flex: 1;
     overflow: auto;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
 }
 body>section>* {
     /* height: 100%; */

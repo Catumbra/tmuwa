@@ -1,3 +1,8 @@
+#streams-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 twitch-stream {
     display: flex;
     flex-direction: column;   
