@@ -2,7 +2,8 @@
 class TwitchStream extends HTMLElement {
     constructor() {
         super();
-
+        
+        // twitch-embed properties
         this.twitchEmbedID = uuidv4();
         this.channel = this.getAttribute('channel');
         this.isDarkMode = true;
@@ -14,16 +15,14 @@ class TwitchStream extends HTMLElement {
         <div class="twitch-embed" id="${this.twitchEmbedID}"></div>
         `;
 
+        // Add Event Listener (Close Button)
+        this.getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].addEventListener('click', this.removeStream);
+
         if (this.channel == null) {
             this.addDummyStream();
         } else {
             this.addStream();
         }
-
-        // var btn_DEBUG = document.createElement("button");
-        // btn_DEBUG.innerText = "DEBUG";
-        // btn_DEBUG.setAttribute("onClick", this.removeStream());
-        // this.getElementsByClassName("control-bar")[0].appendChild(btn_DEBUG);
     }
 
     setChannel(channel) {
@@ -49,7 +48,11 @@ class TwitchStream extends HTMLElement {
         this.getElementsByClassName("twitch-embed")[0].innerHTML = dummyStreamHTML;
     }
     removeStream() {
-        this.remove();
+        // Remove event listeners
+        this.closest("twitch-stream").getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].removeEventListener('click', this.removeStream);
+
+        // Remove Twitch Stream
+        this.closest("twitch-stream").remove();
     }
 }
 
