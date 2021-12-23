@@ -29,6 +29,20 @@ class TwitchStream extends HTMLElement {
         }
     }
 
+    connectedCallback() {
+        console.log(this.twitchEmbedID); //testcode
+    }
+    disconnectedCallback() {
+        console.log(this.twitchEmbedID);  //testcode
+
+        // Remove event listeners
+        this.closest("twitch-stream").getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].removeEventListener('click', this.removeStream);
+        this.closest("twitch-stream").getElementsByClassName('control-bar')[0].getElementsByTagName('button')[1].removeEventListener('click', this.removeEmbed);
+
+        // Relocate Streams
+        setStreamLayout();
+    }
+    
     setChannel(channel) {
         this.channel = channel;
     }
@@ -57,14 +71,8 @@ class TwitchStream extends HTMLElement {
         // console.log(document.getElementById(this.twitchEmbedID));
     }
     removeStream() {
-        // Remove event listeners
-        this.closest("twitch-stream").getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].removeEventListener('click', this.removeStream);
-
         // Remove Twitch Stream
         this.closest("twitch-stream").remove();
-
-        // Relocate Streams
-        setStreamLayout();
     }
 }
 
