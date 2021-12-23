@@ -1,4 +1,5 @@
-// TODO 트위치 스트림 remove 하는 기능, 버튼 이벤트 리스너 추가 및 제거
+// Shadow DOM을 사용하는 방안 검토 - event 발생시 this의 혼란(this.twitchEmbdeID 사용 불가)
+
 class TwitchStream extends HTMLElement {
     constructor() {
         super();
@@ -11,6 +12,7 @@ class TwitchStream extends HTMLElement {
         this.innerHTML = `
         <div class="control-bar">
             <button>Close</button>
+            <button>DEBUG</button>
         </div>
         <div class="twitch-embed" id="${this.twitchEmbedID}"></div>
         `;
@@ -18,17 +20,19 @@ class TwitchStream extends HTMLElement {
         // Add Event Listener (Close Button)
         this.getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].addEventListener('click', this.removeStream);
 
+        this.getElementsByClassName('control-bar')[0].getElementsByTagName('button')[1].addEventListener('click', this.removeEmbed);
+
         if (this.channel == null) {
-            this.addDummyStream();
+            this.addDummyEmbed();
         } else {
-            this.addStream();
+            this.addEmbed();
         }
     }
 
     setChannel(channel) {
         this.channel = channel;
     }
-    addStream() {
+    addEmbed() {
         var embedOptions = {};
         embedOptions['width'] = '100%';
         embedOptions['height'] = '100%';
@@ -38,14 +42,19 @@ class TwitchStream extends HTMLElement {
 
         new Twitch.Embed(this.twitchEmbedID, embedOptions);
     }
-    addDummyStream() {
+    addDummyEmbed() {
         // TODO channel 입력하는 란 추가, 입력시 twitch-embed로 변환하는 기능
         var dummyStreamHTML = `
         <div style="background-color: #18181a; height: 100%; width: 100%;">
-
+            <input type="text"></input>
+            <button>GO</button>
         </div>
         `;
         this.getElementsByClassName("twitch-embed")[0].innerHTML = dummyStreamHTML;
+    }
+    removeEmbed() {
+        // console.log(this.twitchEmbedID);
+        // console.log(document.getElementById(this.twitchEmbedID));
     }
     removeStream() {
         // Remove event listeners
@@ -53,6 +62,9 @@ class TwitchStream extends HTMLElement {
 
         // Remove Twitch Stream
         this.closest("twitch-stream").remove();
+
+        // Relocate Streams
+        setStreamLayout();
     }
 }
 
