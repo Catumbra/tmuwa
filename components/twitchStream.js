@@ -6,22 +6,19 @@ class TwitchStream extends HTMLElement {
         
         // twitch-embed properties
         this.twitchEmbedID = uuidv4();
-        this.channel = this.getAttribute('channel');
+        this.channel = 'undefined';
         this.isDarkMode = true;
         this.isChatOn = true;
         this.innerHTML = `
         <div class="control-bar">
             <button>Close</button>
-            <button>DEBUG</button>
         </div>
         <div class="twitch-embed" id="${this.twitchEmbedID}"></div>
         `;
+    }
 
-        // Add Event Listener (Close Button)
-        this.getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].addEventListener('click', this.removeStream);
-
-        this.getElementsByClassName('control-bar')[0].getElementsByTagName('button')[1].addEventListener('click', this.removeEmbed);
-
+    render() {
+        this.removeEmbed();
         if (this.channel == null) {
             this.addDummyEmbed();
         } else {
@@ -30,21 +27,31 @@ class TwitchStream extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log(this.twitchEmbedID); //testcode
+        // Add Event Listener (Close Button)
+        this.getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].addEventListener('click', this.removeStream);
+
+        this.render();
     }
     disconnectedCallback() {
-        console.log(this.twitchEmbedID);  //testcode
-
         // Remove event listeners
         this.closest("twitch-stream").getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].removeEventListener('click', this.removeStream);
-        this.closest("twitch-stream").getElementsByClassName('control-bar')[0].getElementsByTagName('button')[1].removeEventListener('click', this.removeEmbed);
 
         // Relocate Streams
         setStreamLayout();
     }
+    static get observedAttributes() {
+        return ['channel']
+    }
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.channel = this.getAttribute('channel');
+        this.render()
+    }
     
     setChannel(channel) {
         this.channel = channel;
+    }
+    removeEmbed() {
+        document.getElementById(this.twitchEmbedID).innerHTML = '';
     }
     addEmbed() {
         var embedOptions = {};
@@ -65,10 +72,6 @@ class TwitchStream extends HTMLElement {
         </div>
         `;
         this.getElementsByClassName("twitch-embed")[0].innerHTML = dummyStreamHTML;
-    }
-    removeEmbed() {
-        // console.log(this.twitchEmbedID);
-        // console.log(document.getElementById(this.twitchEmbedID));
     }
     removeStream() {
         // Remove Twitch Stream
