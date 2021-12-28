@@ -6,35 +6,37 @@ class TwitchStream extends HTMLElement {
         
         // twitch-embed properties
         this.twitchEmbedID = uuidv4();
-        this.channel = 'undefined';
-        this.isDarkMode = true;
-        this.isChatOn = true;
+        this.channel = 'undefined'; // default stream
+        // this.theme = 'dark'; // light
+        // this.layout = 'video-with-chat'; // video
         this.innerHTML = `
         <div class="control-bar">
-            <button>Close</button>
+            <input type='text' class='channelInput'></input>
+            <button class='channelBtn'>GO</button>
+            <button class='closeBtn'>Close</button>
         </div>
         <div class="twitch-embed" id="${this.twitchEmbedID}"></div>
         `;
     }
 
     render() {
+        
         this.removeEmbed();
-        if (this.channel == null) {
-            this.addDummyEmbed();
-        } else {
-            this.addEmbed();
-        }
+        this.addEmbed();
     }
 
+    // Callback methods
     connectedCallback() {
         // Add Event Listener (Close Button)
-        this.getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].addEventListener('click', this.removeStream);
+        this.getElementsByClassName('closeBtn')[0].addEventListener('click', this.removeStream);
+        this.getElementsByClassName('channelBtn')[0].addEventListener('click', this.setChannel);
 
         this.render();
     }
     disconnectedCallback() {
         // Remove event listeners
-        this.closest("twitch-stream").getElementsByClassName('control-bar')[0].getElementsByTagName('button')[0].removeEventListener('click', this.removeStream);
+        this.getElementsByClassName('closeBtn')[0].removeEventListener('click', this.removeStream);
+        this.getElementsByClassName('channelBtn')[0].removeEventListener('click', this.setChannel);
 
         // Relocate Streams
         setStreamLayout();
@@ -44,34 +46,27 @@ class TwitchStream extends HTMLElement {
     }
     attributeChangedCallback(name, oldValue, newValue) {
         this.channel = this.getAttribute('channel');
-        this.render()
+        this.render();
     }
     
-    setChannel(channel) {
-        this.channel = channel;
+    setChannel() {
+        this.closest("twitch-stream").setAttribute('channel', this.closest("twitch-stream").getElementsByClassName('channelInput')[0].value);
     }
     removeEmbed() {
         document.getElementById(this.twitchEmbedID).innerHTML = '';
     }
     addEmbed() {
-        var embedOptions = {};
-        embedOptions['width'] = '100%';
-        embedOptions['height'] = '100%';
-        embedOptions['channel'] = this.channel;
-        embedOptions['parent'] = window.location.hostname;
-        embedOptions['muted'] = true; // 테스트중 (임시)
+        var embedOptions = {
+            width: '100%',
+            height: '100%',
+            channel: this.channel,
+            // theme: this.theme,
+            // layout: this.layout,
+            parent: window.location.hostname,
+            // muted: true
+        }
 
         new Twitch.Embed(this.twitchEmbedID, embedOptions);
-    }
-    addDummyEmbed() {
-        // TODO channel 입력하는 란 추가, 입력시 twitch-embed로 변환하는 기능
-        var dummyStreamHTML = `
-        <div style="background-color: #18181a; height: 100%; width: 100%;">
-            <input type="text"></input>
-            <button>GO</button>
-        </div>
-        `;
-        this.getElementsByClassName("twitch-embed")[0].innerHTML = dummyStreamHTML;
     }
     removeStream() {
         // Remove Twitch Stream
