@@ -3,39 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
-    <script src="Scripts/jquery-3.3.1.js"></script>
-
+    
     <title>TMuWA beta</title>
     <link rel="icon" href="fabicon.ico">
-
-    <!-- Styles -->
+    
+    <!-- 트위치 임베드 -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    
+    <!-- Styles & Scripts -->
     <link rel="stylesheet" href="Styles/style.css">
-    <link id="SU_style" rel="stylesheet" href="Styles/StreamerUnit_default.css">
-    <link id="SS_alignment" rel="stylesheet" href="Styles/StreamerSet_alignment/horizontal.css">
-
-    <!-- Scripts -->
+    <link rel="stylesheet" href="Styles/twitch-stream.css">
     <script src="Scripts/script.js"></script>
 
+    <!-- Add Web Components -->
+    <script defer src="components/twitchStream.js"></script>
 </head>
 <body>
-    <header>
-        <div></div>
-        <h1>TMuWA <span class="wordBeta">β</span></h1>
-        <input id="SS_alignment_toggleButton" type="image" src="Images/toggleChat-36.png" onclick="toggleStreamerSet_alignment();">
-    </header>
-    <section id="mainContents">
-        <div id="streamerUnitsHolder"></div>
-        <div id="buttonAddHolder">
-            <button onclick="addUnit();">
-                <img src="Images/plus-24.ico">
-            </button>
-        </div>
+    <header></header>
+    <section id="streams-container">
+        <twitch-stream channel='deukrayx'></twitch-stream>
+        <twitch-stream></twitch-stream>
     </section>
     <footer>
-        <p>Made by <a class="wordCatumbra" href="https://github.com/catumbra" target="_blank">CATUMBRA</a></p>
-        <p id="versionParagraph"></p>
+        <p>Tmuwa(Twitch Multi Web Application) β by <a href="https://github.com/catumbra" target="_blank">CATUMBRA</a></p>
+        <button onclick="addStream();">Add Stream</button>
+        <button onclick="setStreamLayout();">DEBUG</button>
     </footer>
 </body>
 </html>
