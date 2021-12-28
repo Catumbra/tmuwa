@@ -11,7 +11,7 @@ class TwitchStream extends HTMLElement {
         // this.layout = 'video-with-chat'; // video
         this.innerHTML = `
         <div class="control-bar">
-            <input type='text' class='channelInput'></input>
+            <input type='text' class='channelTextBox'></input>
             <button class='channelBtn'>GO</button>
             <button class='closeBtn'>Close</button>
         </div>
@@ -20,7 +20,7 @@ class TwitchStream extends HTMLElement {
     }
 
     render() {
-        
+        this.getElementsByClassName('channelTextBox')[0].value = this.channel;
         this.removeEmbed();
         this.addEmbed();
     }
@@ -28,15 +28,25 @@ class TwitchStream extends HTMLElement {
     // Callback methods
     connectedCallback() {
         // Add Event Listener (Close Button)
-        this.getElementsByClassName('closeBtn')[0].addEventListener('click', this.removeStream);
+        this.getElementsByClassName('channelTextBox')[0].addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                this.setChannel();
+            }
+        });
         this.getElementsByClassName('channelBtn')[0].addEventListener('click', this.setChannel);
+        this.getElementsByClassName('closeBtn')[0].addEventListener('click', this.removeStream);
 
         this.render();
     }
     disconnectedCallback() {
         // Remove event listeners
-        this.getElementsByClassName('closeBtn')[0].removeEventListener('click', this.removeStream);
+        this.getElementsByClassName('channelTextBox')[0].removeEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                this.setChannel();
+            }
+        });
         this.getElementsByClassName('channelBtn')[0].removeEventListener('click', this.setChannel);
+        this.getElementsByClassName('closeBtn')[0].removeEventListener('click', this.removeStream);
 
         // Relocate Streams
         setStreamLayout();
@@ -50,7 +60,7 @@ class TwitchStream extends HTMLElement {
     }
     
     setChannel() {
-        this.closest("twitch-stream").setAttribute('channel', this.closest("twitch-stream").getElementsByClassName('channelInput')[0].value);
+        this.closest("twitch-stream").setAttribute('channel', this.closest("twitch-stream").getElementsByClassName('channelTextBox')[0].value);
     }
     removeEmbed() {
         document.getElementById(this.twitchEmbedID).innerHTML = '';
