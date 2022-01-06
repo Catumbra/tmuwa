@@ -1,0 +1,6 @@
+#welcome {
+    margin: auto;
+}
+#welcome>* {
+    text-align: center;
+}

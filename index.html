@@ -13,16 +13,17 @@
     <!-- Styles & Scripts -->
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="Styles/twitch-stream.css">
+    <link rel="stylesheet" href="Styles/welcome.css">
     <script src="Scripts/script.js"></script>
 
     <!-- Add Web Components -->
     <script defer src="components/twitchStream.js"></script>
 </head>
-<body>
+<body onload="setStreamLayout();">
     <header></header>
     <section id="streams-container">
-        <twitch-stream channel='deukrayx'></twitch-stream>
-        <twitch-stream></twitch-stream>
+        <!-- <twitch-stream channel='deukrayx'></twitch-stream> -->
+        <!-- <twitch-stream></twitch-stream> -->
     </section>
     <footer>
         <p>Tmuwa(Twitch Multi Web Application) β by <a href="https://github.com/catumbra" target="_blank">CATUMBRA</a></p>

@@ -17,7 +17,19 @@ function countStreams() {
 function setStreamLayout() {
     var nStreams = countStreams();
     var container = document.getElementById("streams-container");
-    container.style.gridTemplateColumns = `repeat(${nStreams}, 1fr)`;
+    if (document.getElementById('welcome') != null) {
+        document.getElementById('welcome').remove();
+    } else if (nStreams == 0) {
+        // twitch-stream이 하나도 없을 시 welcome 페이지 추가 /ᐠ｡ꞈ｡ᐟ\\
+        container.innerHTML = `
+        <div id="welcome">
+            <h1>Project tmuwa</h1>
+            <h2>press 'Add Stream' button to add stream. ¯\\_(ツ)_/¯</h2>
+        </div>
+        `;
+    } else {
+        container.style.gridTemplateColumns = `repeat(${nStreams}, 1fr)`;
+    }
 }
 
 function addStream() {
