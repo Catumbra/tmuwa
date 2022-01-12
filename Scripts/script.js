@@ -12,12 +12,20 @@ function countStreams() {
     return count;
 }
 
+// streams-container의 너비 높이 측정
+function getXY(element) {
+    var x = element.clientWidth;
+    var y = element.clientHeight;
+
+    return [x, y];
+}
+
 // twitch-stream 레이아웃 자동 변경
-// TODO 주변 환경에 따라 자동으로 레이아웃 계산하는 알고리즘 추가
 function setStreamLayout() {
     var nStreams = countStreams();
     var container = document.getElementById("streams-container");
     if (document.getElementById('welcome') != null) {
+        // welcome page가 이미 존재할때 제거
         document.getElementById('welcome').remove();
     } else if (nStreams == 0) {
         // twitch-stream이 하나도 없을 시 welcome 페이지 추가 /ᐠ｡ꞈ｡ᐟ\\
@@ -28,7 +36,24 @@ function setStreamLayout() {
         </div>
         `;
     } else {
-        container.style.gridTemplateColumns = `repeat(${nStreams}, 1fr)`;
+        // twitch-stream이 존재할 때 레이아웃 배치
+        var a = 1;
+        while (nStreams > a**2) {
+            a++;
+        }
+
+        var x = container.clientWidth;
+        var y = container.clientHeight;
+        if (x >= y) {
+            container.style.gridAutoFlow = 'row';
+            container.style.gridTemplateRows = '';
+            container.style.gridTemplateColumns = `repeat(${a}, 1fr)`;
+        } else {
+            container.style.gridAutoFlow = 'column';
+            container.style.gridTemplateColumns ='';
+            container.style.gridTemplateRows = `repeat(${a}, 1fr)`;
+        }
+        console.log(a);
     }
 }
 

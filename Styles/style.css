@@ -24,5 +24,17 @@ body>section>* {
     background-color: #1f1e22;
 }
 body>footer {
-    margin-top: auto;
+    /* margin-top: auto; */
+    margin: auto;
+}
+
+button {
+    background-color: #9147ff;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
 }

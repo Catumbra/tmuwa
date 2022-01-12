@@ -1,5 +1,3 @@
-// Shadow DOM을 사용하는 방안 검토 - event 발생시 this의 혼란(this.twitchEmbdeID 사용 불가)
-
 class TwitchStream extends HTMLElement {
     constructor() {
         super();
@@ -11,7 +9,7 @@ class TwitchStream extends HTMLElement {
         // this.layout = 'video-with-chat'; // video
         this.innerHTML = `
         <div class="control-bar">
-            <input type='text' class='channelTextBox'></input>
+            <input type='text' class='channelTextBox' onclick='this.select();'></input>
             <button class='channelBtn'>GO</button>
             <button class='closeBtn'>Close</button>
         </div>
