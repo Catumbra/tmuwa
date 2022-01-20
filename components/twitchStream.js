@@ -10,8 +10,10 @@ class TwitchStream extends HTMLElement {
         this.innerHTML = `
         <div class="control-bar">
             <input type='text' class='channelTextBox' onclick='this.select();'></input>
-            <button class='channelBtn'>GO</button>
-            <button class='closeBtn'>Close</button>
+            <button class='channelBtn btn-style-gray'>GO</button>
+            <button class='closeBtn btn-style-transparent'>
+                <ion-icon name="close" style="font-size: 20px;"></ion-icon>
+            </button>
         </div>
         <div class="twitch-embed" id="${this.twitchEmbedID}"></div>
         `;

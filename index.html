@@ -9,26 +9,28 @@
     
     <!-- 트위치 임베드 -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Ion Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
-    <!-- Styles & Scripts -->
+    <!-- Local Styles & Scripts -->
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="Styles/twitch-stream.css">
     <link rel="stylesheet" href="Styles/welcome.css">
     <script src="Scripts/script.js"></script>
 
-    <!-- Add Web Components -->
+    <!-- Local Web Components -->
     <script defer src="components/twitchStream.js"></script>
 </head>
 <body onload="setStreamLayout();">
     <header></header>
     <section id="streams-container">
-        <twitch-stream channel='deukrayx'></twitch-stream>
-        <!-- <twitch-stream></twitch-stream> -->
+        <twitch-stream></twitch-stream>
     </section>
     <footer>
-        <!-- <p>Tmuwa(Twitch Multi Web Application) β by <a href="https://github.com/catumbra" target="_blank">CATUMBRA</a></p> -->
         <button onclick="addStream();">Add Stream</button>
-        <button onclick="setStreamLayout();">DEBUG</button>
+        <!-- <button onclick="setStreamLayout();">DEBUG</button> -->
     </footer>
 </body>
 </html>

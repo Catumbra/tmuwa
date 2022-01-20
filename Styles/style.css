@@ -3,12 +3,16 @@
 
 * {
     margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
 }
+:focus {
+    outline: none; /* 브라우저 기본 하이라이팅 제거 */
+}
+
 html {
     height: 100%;
     color: #f7f7f8;
     background-color: #0e0e10;
-    font-family: 'Noto Sans KR', sans-serif;
 }
 body {
     display: flex;
@@ -24,8 +28,7 @@ body>section>* {
     background-color: #1f1e22;
 }
 body>footer {
-    /* margin-top: auto; */
-    margin: auto;
+    margin-top: auto;
 }
 
 button {
@@ -35,6 +38,52 @@ button {
     padding: 6px 10px;
     text-align: center;
     display: inline-block;
-    margin: 4px 2px;
+    margin: 4px;
     cursor: pointer;
+    border-radius: 3px;
+}
+button:hover {
+    background-color: #772ce8;
+}
+button:active {
+    background-color: #9147ff;
+}
+/* Button Style: gray */
+button.btn-style-gray {
+    background-color: #3a3a3c;
+}
+button.btn-style-gray:hover {
+    background-color: #464648;
+}
+button.btn-style-gray:active {
+    background-color: #3a3a3c;
+}
+/* Button Style: transparent */
+button.btn-style-transparent {
+    background-color: transparent;
+}
+button.btn-style-transparent:hover {
+    background-color: #ffffff29;
+}
+button.btn-style-transparent:active {
+    background-color: #ffffff20;
+}
+
+input[type=text] {
+    background-color: #464648;
+    padding: 4px 8px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 3px;
+    margin: 4px;
+    color: #dedee3;
+    text-align: center;
+    transition-duration: 0.2s;
+}
+input[type=text]:hover {
+    border-color: #ffffff22;
+}
+input[type=text]:focus {
+    background-color: black;
+    border-color: #a970ff;
 }

@@ -1,12 +1,41 @@
 #streams-container {
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
 }
 
 twitch-stream {
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    transition-duration: 0.2s;
 }
+twitch-stream:hover {
+    border-color: #a970ff55;
+}
+
+twitch-stream>.control-bar {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto 1fr;
+}
+.control-bar>.channelTextBox {
+    width: 150px;
+    margin-right: 1px;
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+}
+.control-bar>.channelBtn {
+    margin-left: 0px;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+}
+.control-bar>.closeBtn {
+    justify-self: end;
+    display: inline-flex; /* 왜 이걸 추가해야 중앙정렬되는지 모르겠음 */
+    padding: 6px;
+}
+
 twitch-stream>.twitch-embed {
     height: 100%;
 }
