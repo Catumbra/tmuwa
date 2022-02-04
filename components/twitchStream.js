@@ -5,7 +5,7 @@ class TwitchStream extends HTMLElement {
         // twitch-embed properties
         this.twitchEmbedID = uuidv4();
         this.channel = 'undefined'; // default stream
-        // this.theme = 'dark'; // light
+        this.theme = 'dark'; // light
         // this.layout = 'video-with-chat'; // video
         this.innerHTML = `
         <div class="control-bar">
@@ -70,7 +70,7 @@ class TwitchStream extends HTMLElement {
             width: '100%',
             height: '100%',
             channel: this.channel,
-            // theme: this.theme,
+            theme: this.theme,
             // layout: this.layout,
             parent: window.location.hostname,
             // muted: true

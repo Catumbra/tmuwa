@@ -53,7 +53,6 @@ function setStreamLayout() {
             container.style.gridTemplateColumns ='';
             container.style.gridTemplateRows = `repeat(${a}, 1fr)`;
         }
-        console.log(a);
     }
 }
 
