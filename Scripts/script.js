@@ -62,3 +62,19 @@ function addStream() {
 
     setStreamLayout();
 }
+
+// 열려있는 twitch stream에 따라 url 변경
+function replaceURIPath() {
+    var channelList = checkOpenStreams();
+    var URIPath = '/' + channelList.join('/');
+    history.replaceState({data:channelList}, null, URIPath);
+}
+
+// 열려있는 twitch stream의 channel 값 리스트로 리턴
+function checkOpenStreams() {
+    var channelList = new Array();
+    for (let stream of document.getElementsByTagName("twitch-stream")) {
+        channelList.push(stream.channel);
+    }
+    return channelList;
+}
