@@ -23,14 +23,15 @@
     <!-- Local Web Components -->
     <script defer src="components/twitchStream.js"></script>
 </head>
-<body onload="setStreamLayout();">
+<!-- <body onload="setStreamLayout();replaceURIPath();"> -->
+<body>
     <header></header>
     <section id="streams-container">
         <twitch-stream></twitch-stream>
     </section>
     <footer>
         <button onclick="addStream();">Add Stream</button>
-        <button onclick="setStreamLayout();">DEBUG</button>
+        <button onclick="setStreamLayout();">Layout</button>
     </footer>
 </body>
 </html>

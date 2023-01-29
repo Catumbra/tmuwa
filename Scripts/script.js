@@ -1,3 +1,8 @@
+window.onload = function(){
+    setStreamLayout();
+    // replaceURIPath(); //페이지 켤 때 열려있는 stream에 따라 URI 변경
+}
+
 // uuid 생성기 코드
 function uuidv4() {
         return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
@@ -37,22 +42,26 @@ function setStreamLayout() {
         `;
     } else {
         // twitch-stream이 존재할 때 레이아웃 배치
-        var a = 1;
-        while (nStreams > a**2) {
-            a++;
-        }
 
-        var x = container.clientWidth;
-        var y = container.clientHeight;
-        if (x >= y) {
-            container.style.gridAutoFlow = 'row';
-            container.style.gridTemplateRows = '';
-            container.style.gridTemplateColumns = `repeat(${a}, 1fr)`;
-        } else {
-            container.style.gridAutoFlow = 'column';
-            container.style.gridTemplateColumns ='';
-            container.style.gridTemplateRows = `repeat(${a}, 1fr)`;
-        }
+        // 창의 크기에 따라 창 배치를 바꾸는 기능
+        // var a = 1;
+        // while (nStreams > a**2) {
+        //     a++;
+        // }
+        // var x = container.clientWidth;
+        // var y = container.clientHeight;
+        // if (x >= y) {
+        //     container.style.gridAutoFlow = 'row';
+        //     container.style.gridTemplateRows = '';
+        //     container.style.gridTemplateColumns = `repeat(${a}, 1fr)`;
+        // } else {
+        //     container.style.gridAutoFlow = 'column';
+        //     container.style.gridTemplateColumns ='';
+        //     container.style.gridTemplateRows = `repeat(${a}, 1fr)`;
+        // }
+
+        if (container.style.gridAutoFlow == 'row') container.style.gridAutoFlow = 'column';
+        else container.style.gridAutoFlow = 'row';
     }
 }
 
