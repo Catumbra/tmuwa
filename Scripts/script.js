@@ -69,7 +69,7 @@ function addStream() {
     var container = document.getElementById("streams-container");
     container.appendChild(new TwitchStream());
 
-    setStreamLayout();
+    // setStreamLayout();
 }
 
 // 열려있는 twitch stream에 따라 url 변경
